@@ -1,0 +1,1014 @@
+/* src/styles/security.css - Simple & Clean with Valid/Invalid */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f7fa;
+}
+
+/* ========== Container ========== */
+.sec-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 16px 80px;
+  min-height: 100vh;
+}
+
+/* ========== Header ========== */
+.sec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sec-header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.sec-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sec-logout:hover {
+  background: #fecaca;
+}
+
+/* ========== Cards ========== */
+.sec-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+/* ========== Valid/Invalid Status ========== */
+
+/* Valid Card - Green Border */
+.sec-card.valid {
+  border: 2px solid #10b981;
+  background: #f0fdf4;
+}
+
+/* Invalid Card - Red Border */
+.sec-card.invalid {
+  border: 2px solid #ef4444;
+  background: #fef2f2;
+}
+
+/* Status Banner */
+.sec-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.sec-status-banner.valid {
+  background: #10b981;
+  color: white;
+}
+
+.sec-status-banner.invalid {
+  background: #ef4444;
+  color: white;
+}
+
+.sec-status-icon {
+  font-size: 20px;
+}
+
+.sec-status-text {
+  letter-spacing: 1px;
+}
+
+/* ========== Scanner ========== */
+.sec-scanner {
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+
+.sec-scanner video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* ========== Input ========== */
+.sec-input-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sec-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  background: #f8fafc;
+}
+
+.sec-input:focus {
+  border-color: #4f46e5;
+}
+
+/* ========== Buttons ========== */
+.sec-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sec-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sec-btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.sec-btn-primary:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.sec-btn-exit {
+  flex: 1;
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.sec-btn-exit:hover:not(:disabled) {
+  background: #fde68a;
+}
+
+.sec-btn-entry {
+  flex: 1;
+  background: #d1fae5;
+  color: #059669;
+}
+
+.sec-btn-entry:hover:not(:disabled) {
+  background: #a7f3d0;
+}
+
+/* ========== Result ========== */
+.sec-result-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+}
+
+.sec-result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sec-row:last-child {
+  border-bottom: none;
+}
+
+.sec-label {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.sec-value {
+  color: #1a1a2e;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.sec-pass {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.sec-approved {
+  color: #059669;
+}
+
+.sec-pending {
+  color: #d97706;
+}
+
+/* Exit/Entry time rows */
+.sec-exit-row {
+  background: #fef3c7;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.sec-exit-time {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.sec-entry-row {
+  background: #d1fae5;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.sec-entry-time {
+  color: #059669;
+  font-weight: 600;
+}
+
+/* ========== Error & Empty ========== */
+.sec-error {
+  padding: 12px;
+  background: #fee2e2;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 13px;
+  text-align: center;
+}
+
+.sec-empty {
+  padding: 24px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* ========== Actions ========== */
+.sec-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* ========== Bottom Nav ========== */
+.sec-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 14px;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.04);
+}
+
+.sec-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sec-nav-item svg {
+  font-size: 18px;
+}
+
+.sec-nav-item.active {
+  color: #4f46e5;
+}
+
+.sec-nav-item:hover {
+  color: #4f46e5;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 480px) {
+  .sec-container {
+    padding: 12px 12px 80px;
+  }
+
+  .sec-scanner {
+    height: 220px;
+  }
+
+  .sec-input-group {
+    flex-direction: column;
+  }
+
+  .sec-btn-primary {
+    width: 100%;
+  }
+
+  .sec-actions {
+    flex-direction: column;
+  }
+
+  .sec-row {
+    flex-direction: column;
+    gap: 2px;
+    padding: 5px 0;
+  }
+
+  .sec-value {
+    text-align: left;
+  }
+
+  .sec-nav {
+    padding: 8px 0 12px;
+  }
+
+  .sec-nav-item {
+    font-size: 9px;
+  }
+
+  .sec-nav-item svg {
+    font-size: 16px;
+  }
+
+  .sec-status-banner {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+/* ==========================================
+   ADD TO EXISTING security.css
+   ========================================== */
+
+/* ----- Back Button ----- */
+.sec-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #1a1a2e;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sec-back-btn:hover {
+  background: #e5e7eb;
+}
+
+/* ----- Filters ----- */
+.sec-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sec-filter-btn {
+  padding: 6px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  background: white;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sec-filter-btn.active {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.sec-filter-btn.success.active {
+  border-color: #10b981;
+  background: #d1fae5;
+  color: #059669;
+}
+
+.sec-filter-btn.error.active {
+  border-color: #ef4444;
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.sec-filter-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ----- Loading ----- */
+.sec-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.sec-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ----- Empty State ----- */
+.sec-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.sec-empty-state svg {
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.sec-empty-state h4 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin: 0 0 4px 0;
+}
+
+.sec-empty-state p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+}
+
+/* ----- History List ----- */
+.sec-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sec-history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border-left: 4px solid #e5e7eb;
+}
+
+.sec-history-item.success {
+  border-left-color: #10b981;
+}
+
+.sec-history-item.error {
+  border-left-color: #ef4444;
+}
+
+.sec-history-icon {
+  flex-shrink: 0;
+}
+
+.sec-icon-success {
+  color: #10b981;
+  font-size: 20px;
+}
+
+.sec-icon-error {
+  color: #ef4444;
+  font-size: 20px;
+}
+
+.sec-history-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sec-history-pass {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.sec-history-student {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sec-history-time {
+  font-size: 11px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.sec-history-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.sec-history-status.success {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.sec-history-status.error {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ----- Profile ----- */
+.sec-profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sec-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.sec-avatar-text {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.sec-profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 4px 0;
+}
+
+.sec-profile-role {
+  font-size: 13px;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 2px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ----- Detail Items ----- */
+.sec-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sec-detail-item:last-child {
+  border-bottom: none;
+}
+
+.sec-detail-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.sec-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-detail-label {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sec-detail-value {
+  font-size: 14px;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+/* ----- Change Password Button ----- */
+.sec-change-password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 480px) {
+  .sec-filters {
+    flex-wrap: wrap;
+  }
+  
+  .sec-filter-btn {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+  
+  .sec-history-item {
+    padding: 12px 14px;
+  }
+  
+  .sec-profile-card {
+    padding: 18px;
+  }
+  
+  .sec-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .sec-avatar-text {
+    font-size: 26px;
+  }
+  
+  .sec-profile-name {
+    font-size: 18px;
+  }
+
+  .sec-detail-item {
+    padding: 10px 0;
+  }
+}
+/* ==========================================
+   ADD TO EXISTING security.css
+   ========================================== */
+
+/* ----- Status Cards Grid ----- */
+.sec-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sec-stat-card {
+  background: white;
+  border-radius: 1px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border-left: 4px solid #4f46e5;
+  transition: transform 0.2s ease;
+}
+
+.sec-stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.sec-stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-stat-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+}
+
+.sec-stat-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 480px) {
+  .sec-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .sec-stat-card {
+    padding: 10px 12px;
+  }
+  
+  .sec-stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .sec-stat-value {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sec-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .sec-stat-card {
+    padding: 8px 10px;
+  }
+  
+  .sec-stat-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .sec-stat-value {
+    font-size: 15px;
+  }
+  
+  .sec-stat-label {
+    font-size: 9px;
+  }
+}
+/* ==========================================
+   ADD TO EXISTING security.css
+   ========================================== */
+
+/* ----- Analytics Grid ----- */
+.sec-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sec-analytic-card {
+  background: white;
+  border-radius: 1px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border-left: 4px solid #4f46e5;
+  transition: transform 0.2s ease;
+}
+
+.sec-analytic-card:hover {
+  transform: translateY(-2px);
+}
+
+.sec-analytic-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-analytic-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-analytic-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+}
+
+.sec-analytic-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sec-analytic-sub {
+  font-size: 9px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ----- Charts Section ----- */
+.sec-charts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.sec-chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sec-chart-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 10px 0;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .sec-analytics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .sec-charts-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .sec-analytic-card {
+    padding: 10px 12px;
+  }
+  
+  .sec-analytic-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .sec-analytic-value {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sec-analytics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .sec-analytic-card {
+    padding: 8px 10px;
+  }
+  
+  .sec-analytic-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .sec-analytic-value {
+    font-size: 15px;
+  }
+  
+  .sec-analytic-label {
+    font-size: 9px;
+  }
+  
+  .sec-chart-card {
+    padding: 10px;
+  }
+  
+  .sec-chart-card h4 {
+    font-size: 12px;
+  }
+}
+/* Add these styles to security.css */
+
+/* ----- Refresh Button ----- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sec-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sec-refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(45deg);
+}
+
+/* ----- Retry Button ----- */
+.sec-retry-btn {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sec-retry-btn:hover {
+  background: #4338ca;
+}
+
+/* ----- History Scanned By ----- */
+.sec-history-scanned-by {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-top: 2px;
+}

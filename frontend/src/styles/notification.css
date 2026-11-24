@@ -1,0 +1,483 @@
+/* src/styles/notification.css */
+
+/* ==========================================
+   NOTIFICATION POPUP
+   ========================================== */
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.notification-popup {
+  max-width: 480px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.notification-popup.emergency {
+  border: 3px solid #dc2626;
+  animation: emergencyPulse 1s ease-in-out infinite, slideUp 0.4s ease;
+}
+
+@keyframes emergencyPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+}
+
+/* ----- Header ----- */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+}
+
+.notification-popup.emergency .notification-header {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.notification-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.notification-bell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: bellRing 0.5s ease-in-out 3;
+  flex-shrink: 0;
+}
+
+@keyframes bellRing {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+.notification-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.notification-emergency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 2px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: flashBadge 0.8s ease-in-out infinite;
+}
+
+@keyframes flashBadge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.notification-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* ----- Body ----- */
+.notification-body {
+  padding: 20px;
+}
+
+.notification-student {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.notification-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.notification-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notification-student-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.notification-student-info .student-id {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.notification-student-info .student-dept {
+  display: block;
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* ----- Details ----- */
+.notification-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.notification-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.detail-icon {
+  color: #667eea;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.notification-detail-item div {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-label {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.detail-value {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
+/* ----- Actions ----- */
+.notification-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-view-request {
+  flex: 2;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-view-request:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-view-request:active {
+  transform: scale(0.96);
+}
+
+.btn-dismiss {
+  flex: 1;
+  padding: 12px 16px;
+  background: #f3f4f6;
+  color: #6b7280;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-dismiss:hover {
+  background: #e5e7eb;
+}
+
+.btn-dismiss:active {
+  transform: scale(0.96);
+}
+
+/* ----- Emergency Flash ----- */
+.notification-emergency-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.08), rgba(220, 38, 38, 0));
+  border-radius: 20px;
+  animation: emergencyFlash 1.5s ease-in-out infinite;
+}
+
+@keyframes emergencyFlash {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 480px) {
+  .notification-popup {
+    border-radius: 16px;
+  }
+
+  .notification-header {
+    padding: 14px 16px;
+  }
+
+  .notification-body {
+    padding: 16px;
+  }
+
+  .notification-student {
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .notification-details {
+    gap: 6px;
+  }
+
+  .notification-detail-item {
+    padding: 6px 10px;
+  }
+
+  .notification-actions {
+    flex-direction: column;
+  }
+
+  .btn-view-request {
+    flex: 1;
+  }
+
+  .btn-dismiss {
+    flex: 1;
+  }
+
+  .notification-title {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   DARK MODE
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .notification-popup {
+    background: #1e293b;
+  }
+
+  .notification-student {
+    background: #0f172a;
+  }
+
+  .notification-student-info h4 {
+    color: #e2e8f0;
+  }
+
+  .notification-student-info .student-id {
+    color: #94a3b8;
+  }
+
+  .notification-detail-item {
+    background: #0f172a;
+  }
+
+  .detail-value {
+    color: #e2e8f0;
+  }
+
+  .btn-dismiss {
+    background: #334155;
+    color: #94a3b8;
+  }
+
+  .btn-dismiss:hover {
+    background: #475569;
+  }
+
+  .notification-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+/* src/styles/notification.css - Add these styles */
+
+/* ----- Header Actions ----- */
+.notification-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----- Speak Button ----- */
+.notification-speak-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.notification-speak-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.notification-speak-btn:active {
+  transform: scale(0.95);
+}
+
+/* ----- Speaking Indicator ----- */
+.speaking-indicator {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.speaking-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: speakingDot 1s ease-in-out infinite;
+}
+
+.speaking-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.speaking-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.speaking-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes speakingDot {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.speaking-text {
+  font-size: 10px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .notification-speak-btn {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .notification-speak-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .speaking-text {
+    color: #94a3b8;
+  }
+  
+  .speaking-dot {
+    background: #818cf8;
+  }
+}

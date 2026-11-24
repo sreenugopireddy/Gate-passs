@@ -1,0 +1,939 @@
+/* src/styles/navbar.css - Normal Navbar */
+
+/* ==========================================
+   NORMAL NAVBAR - All Roles
+   ========================================== */
+
+.navbar-glass {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 3px solid #ffd634;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 0 16px;
+}
+
+.navbar-glass.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-glass-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* ==========================================
+   BRAND
+   ========================================== */
+
+.navbar-glass-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-glass-brand:hover {
+  opacity: 0.8;
+  color: #1a1a2e;
+}
+
+.glass-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.glass-brand-text {
+  letter-spacing: -0.3px;
+  font-weight: 700;
+}
+
+.glass-brand-version {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: #eef2ff;
+  color: #667eea;
+  border-radius: 12px;
+  letter-spacing: 0.3px;
+  margin-left: -4px;
+}
+
+/* ==========================================
+   NAV LINKS (Desktop)
+   ========================================== */
+
+.glass-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.glass-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.glass-nav-link:hover {
+  color: #1a1a2e;
+  background: #f8fafc;
+}
+
+.glass-nav-link.active {
+  color: #667eea;
+  background: #eef2ff;
+}
+
+.glass-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #667eea;
+  border-radius: 2px;
+}
+
+.glass-nav-link span {
+  font-size: 13px;
+}
+
+/* ==========================================
+   ACTIONS
+   ========================================== */
+
+.glass-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* ----- Login Button ----- */
+.glass-login-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.glass-login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+}
+
+/* ----- Notification Button ----- */
+.glass-notif-wrapper {
+  position: relative;
+}
+
+.glass-notif-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-notif-btn:hover {
+  background: #f8fafc;
+  color: #1a1a2e;
+}
+
+.glass-notif-btn.has-unread {
+  color: #667eea;
+}
+
+.glass-notif-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* ----- Notification Dropdown ----- */
+.glass-notif-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 380px;
+  max-height: 440px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.glass-notif-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+
+.glass-mark-read {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.glass-mark-read:hover {
+  color: #667eea;
+}
+
+.glass-notif-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+  max-height: 340px;
+}
+
+.glass-notif-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.glass-notif-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass-notif-list::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.glass-notif-empty {
+  padding: 30px 20px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.glass-notif-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.glass-notif-item:hover {
+  background: #f8fafc;
+}
+
+.glass-notif-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.glass-notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.glass-notif-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.glass-notif-pass {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a1a2e;
+}
+
+.glass-emergency-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 10px;
+}
+
+.glass-approved-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 8px;
+  background: #d1fae5;
+  color: #059669;
+  border-radius: 10px;
+}
+
+.glass-rejected-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 8px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 10px;
+}
+
+.glass-notif-dept {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.glass-notif-time {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.text-success {
+  color: #059669;
+}
+
+.text-danger {
+  color: #dc2626;
+}
+
+.text-info {
+  color: #3b82f6;
+}
+
+/* ----- User Button ----- */
+.glass-user-wrapper {
+  position: relative;
+}
+
+.glass-user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1a1a2e;
+}
+
+.glass-user-btn:hover {
+  background: #f8fafc;
+}
+
+.glass-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glass-avatar-text {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.glass-user-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
+.glass-user-role {
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ----- User Dropdown ----- */
+.glass-user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.glass-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.glass-dropdown-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.glass-dropdown-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glass-dropdown-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.glass-dropdown-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+
+.glass-dropdown-email {
+  font-size: 12px;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.glass-dropdown-role {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 0.3px;
+}
+
+.glass-dropdown-divider {
+  height: 1px;
+  background: #f0f2f5;
+}
+
+.glass-dropdown-items {
+  padding: 4px 0;
+}
+
+.glass-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.glass-dropdown-item:hover {
+  background: #f8fafc;
+  color: #1a1a2e;
+}
+
+.glass-dropdown-item.logout {
+  color: #dc2626;
+}
+
+.glass-dropdown-item.logout:hover {
+  background: #fee2e2;
+}
+
+/* ----- Mobile Toggle ----- */
+.glass-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #1a1a2e;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.glass-mobile-toggle:hover {
+  background: #f8fafc;
+}
+
+/* ==========================================
+   MOBILE MENU
+   ========================================== */
+
+.glass-mobile-menu {
+  display: none;
+  background: #ffffff;
+  border-top: 1px solid #f0f2f5;
+  padding: 8px 0;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.glass-mobile-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 16px;
+}
+
+.glass-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.glass-mobile-link:hover {
+  background: #f8fafc;
+  color: #1a1a2e;
+}
+
+.glass-mobile-link.active {
+  color: #667eea;
+  background: #eef2ff;
+}
+
+.glass-mobile-divider {
+  height: 1px;
+  background: #f0f2f5;
+  margin: 6px 0;
+}
+
+.glass-mobile-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  color: #dc2626;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.glass-mobile-logout:hover {
+  background: #fee2e2;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .glass-nav-links {
+    margin: 0 12px;
+  }
+  
+  .glass-nav-link span {
+    display: none;
+  }
+  
+  .glass-nav-link {
+    padding: 8px 12px;
+  }
+  
+  .glass-user-name {
+    display: none;
+  }
+  
+  .glass-user-role {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-glass {
+    padding: 0 12px;
+  }
+  
+  .navbar-glass-container {
+    height: 56px;
+  }
+  
+  .glass-nav-links {
+    display: none;
+  }
+  
+  .glass-mobile-toggle {
+    display: flex;
+  }
+  
+  .glass-mobile-menu {
+    display: block;
+  }
+  
+  .glass-notif-dropdown {
+    width: calc(100vw - 24px);
+    right: -8px;
+  }
+  
+  .glass-user-dropdown {
+    width: calc(100vw - 24px);
+    right: -8px;
+  }
+  
+  .glass-user-name {
+    display: none;
+  }
+  
+  .glass-user-role {
+    display: none;
+  }
+  
+  .glass-brand-text {
+    font-size: 16px;
+  }
+  
+  .glass-brand-version {
+    display: none;
+  }
+  
+  .glass-brand-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  .glass-user-btn {
+    padding: 4px 6px 4px 4px;
+  }
+  
+  .glass-user-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .glass-notif-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-glass {
+    padding: 0 8px;
+  }
+  
+  .navbar-glass-container {
+    height: 50px;
+  }
+  
+  .glass-brand-text {
+    font-size: 14px;
+  }
+  
+  .glass-brand-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  
+  .glass-notif-dropdown {
+    width: calc(100vw - 16px);
+    right: -4px;
+  }
+  
+  .glass-user-dropdown {
+    width: calc(100vw - 16px);
+    right: -4px;
+  }
+  
+  .glass-mobile-link {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .navbar-glass {
+    background: #1e293b;
+    border-bottom-color: #ffd634;
+  }
+
+  .navbar-glass.scrolled {
+    background: #1e293b;
+  }
+
+  .navbar-glass-brand {
+    color: #e2e8f0;
+  }
+
+  .navbar-glass-brand:hover {
+    color: #e2e8f0;
+  }
+
+  .glass-brand-version {
+    background: rgba(102, 126, 234, 0.2);
+    color: #818cf8;
+  }
+
+  .glass-nav-link {
+    color: #94a3b8;
+  }
+
+  .glass-nav-link:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav-link.active {
+    color: #818cf8;
+    background: rgba(102, 126, 234, 0.15);
+  }
+
+  .glass-notif-btn {
+    color: #94a3b8;
+  }
+
+  .glass-notif-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+  }
+
+  .glass-notif-btn.has-unread {
+    color: #818cf8;
+  }
+
+  .glass-notif-badge {
+    border-color: #1e293b;
+  }
+
+  .glass-notif-dropdown {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .glass-notif-header {
+    border-color: #334155;
+  }
+
+  .glass-notif-title {
+    color: #e2e8f0;
+  }
+
+  .glass-notif-item {
+    border-color: #2d3748;
+  }
+
+  .glass-notif-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .glass-notif-pass {
+    color: #e2e8f0;
+  }
+
+  .glass-notif-dept {
+    color: #94a3b8;
+  }
+
+  .glass-user-btn {
+    color: #e2e8f0;
+  }
+
+  .glass-user-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-user-role {
+    background: #2d3748;
+    color: #94a3b8;
+  }
+
+  .glass-user-dropdown {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .glass-dropdown-header {
+    border-color: #334155;
+  }
+
+  .glass-dropdown-name {
+    color: #e2e8f0;
+  }
+
+  .glass-dropdown-email {
+    color: #94a3b8;
+  }
+
+  .glass-dropdown-item {
+    color: #94a3b8;
+  }
+
+  .glass-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+  }
+
+  .glass-dropdown-item.logout {
+    color: #fca5a5;
+  }
+
+  .glass-dropdown-item.logout:hover {
+    background: rgba(239, 68, 68, 0.15);
+  }
+
+  .glass-mobile-menu {
+    background: #1e293b;
+    border-top-color: #334155;
+  }
+
+  .glass-mobile-link {
+    color: #94a3b8;
+  }
+
+  .glass-mobile-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+  }
+
+  .glass-mobile-link.active {
+    color: #818cf8;
+    background: rgba(102, 126, 234, 0.15);
+  }
+
+  .glass-mobile-divider {
+    background: #334155;
+  }
+
+  .glass-mobile-logout {
+    color: #fca5a5;
+  }
+
+  .glass-mobile-logout:hover {
+    background: rgba(239, 68, 68, 0.15);
+  }
+
+  .glass-mobile-toggle {
+    color: #e2e8f0;
+  }
+
+  .glass-mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-login-btn {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  }
+
+  .glass-notif-empty {
+    color: #64748b;
+  }
+
+  .glass-dropdown-divider {
+    background: #334155;
+  }
+
+  .glass-notif-list::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+}
